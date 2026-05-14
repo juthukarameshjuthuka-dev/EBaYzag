@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-gold: #D4AF37;
+  --color-gold-light: #F9E29B;
+  --color-luxury-black: #05070A;
+  --color-luxury-dark: #0A0C10;
+  --color-card-bg: #111318;
+  --color-silver: #C0C0C0;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-luxury-black text-white selection:bg-gold/30;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-white;
+  }
+}
+
+@layer components {
+  .glass-header {
+    @apply bg-luxury-black/80 backdrop-blur-md border-b border-white/10;
+  }
+
+  .premium-card {
+    @apply bg-card-bg border border-white/5 hover:border-gold/50 transition-all duration-300;
+  }
+  
+  .premium-btn {
+    @apply px-8 py-4 font-bold text-sm tracking-widest uppercase transition-all transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-gold {
+    @apply bg-gold text-black hover:bg-white;
+  }
+
+  .btn-outline {
+    @apply border border-white/20 text-white hover:bg-white/10;
+  }
+}
